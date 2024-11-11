@@ -7,7 +7,7 @@ import * as React from "react";
 import { toast } from "sonner";
 
 export default function Page() {
-  const host = window.location.hostname;
+  const host = window.location.host;
 
   const [state, dispatch] = useFormState(send, undefined);
 
