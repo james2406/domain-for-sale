@@ -3,12 +3,14 @@ import { headers } from "next/headers";
 import "./ui/global.css";
 import { Toaster } from "./ui/toaster";
 
-const domainName = headers().get("host");
+export async function generateMetadata() {
+  const host = headers().get("host");
 
-export const metadata = {
-  title: domainName,
-  description: `${domainName} is for sale`,
-};
+  return {
+    title: host,
+    description: `${host} is for sale`,
+  };
+}
 
 export default function RootLayout({
   children,
