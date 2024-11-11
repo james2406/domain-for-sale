@@ -5,10 +5,11 @@ import { Toaster } from "./ui/toaster";
 
 export async function generateMetadata() {
   const host = headers().get("host");
+  const hostname = host?.startsWith("www.") ? host.slice(4) : host;
 
   return {
-    title: host,
-    description: `${host} is for sale`,
+    title: hostname,
+    description: `${hostname} is for sale`,
   };
 }
 
